@@ -9,12 +9,11 @@ namespace Inlamning_3_ra_kod
     public class letter
     {
         public string letters;
-        public double value;
+        public double value = 0;
 
-        public letter(string letters, double value)
+        public letter(string letters)
         {
             this.letters = letters;
-            this.value = value;
         }
 
     }
@@ -35,8 +34,8 @@ namespace Inlamning_3_ra_kod
         public string entry;
         public string selectedLetter;
 
-        List<letter> letterValues = new List<letter>();
-        
+        public List<letter> letterValues = new List<letter>();
+
         /* CONSTRUCTOR: CStack
          * PURPOSE: create a new stack and init X, Y, Z, T and the text entry
          * PARAMETERS: --
@@ -45,6 +44,23 @@ namespace Inlamning_3_ra_kod
         {
             X = Y = Z = T = 0;
             entry = "";
+
+            letter A = new letter("A");
+            letterValues.Add(A);
+            letter B = new letter("B");
+            letterValues.Add(B);
+            letter C = new letter("C");
+            letterValues.Add(C);
+            letter D = new letter("D");
+            letterValues.Add(D);
+            letter E = new letter("E");
+            letterValues.Add(E);
+            letter F = new letter("F");
+            letterValues.Add(F);
+            letter G = new letter("G");
+            letterValues.Add(G);
+            letter H = new letter("H");
+            letterValues.Add(H);
         }
         /* METHOD: Exit
          * PURPOSE: called on exit, prepared for saving
@@ -72,7 +88,7 @@ namespace Inlamning_3_ra_kod
          */
         public string VarString()
         {
-            return "insertme";
+            return "Insertme";
         }
         /* METHOD: SetX
          * PURPOSE: set X with overwrite
@@ -286,7 +302,13 @@ namespace Inlamning_3_ra_kod
          */
         public void SetVar()
         {
-
+            for(int i = 0; i < letterValues.Count(); i++)
+            {
+                if(letterValues[i].letters == selectedLetter)
+                {
+                    letterValues[i].value = X;
+                }
+            }
         }
         /* METHOD: GetVar
          * PURPOSE: 
