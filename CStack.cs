@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace Inlamning_3_ra_kod
 {
+    public class letter
+    {
+        public string letters;
+        public double value;
+
+        public letter(string letters, double value)
+        {
+            this.letters = letters;
+            this.value = value;
+        }
+
+    }
     /* CLASS: CStack
      * PURPOSE: Is essentially a RPN-calculator with four registers X, Y, Z, T
      *   like the HP RPN calculators. Numeric values are entered in the entry
@@ -22,6 +34,9 @@ namespace Inlamning_3_ra_kod
         public double X, Y, Z, T;
         public string entry;
         public string selectedLetter;
+
+        List<letter> letterValues = new List<letter>();
+        
         /* CONSTRUCTOR: CStack
          * PURPOSE: create a new stack and init X, Y, Z, T and the text entry
          * PARAMETERS: --
