@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace Inlamning_3_ra_kod
 {
-    public class letter
+    /* CLASS: Letter
+     * PURPOSE: A class Letter with two variables and a constructor to 
+     *   store information about a letter and it´s value
+     */
+    public class Letter
     {
         public string letters;
         public double value = 0;
 
-        public letter(string letters)
+        public Letter(string letters)
         {
             this.letters = letters;
         }
@@ -34,7 +38,7 @@ namespace Inlamning_3_ra_kod
         public string entry;
         public string selectedLetter;
 
-        public List<letter> letterValues = new List<letter>();
+        public List<Letter> letterValues = new List<Letter>();
 
         /* CONSTRUCTOR: CStack
          * PURPOSE: create a new stack and init X, Y, Z, T and the text entry
@@ -45,21 +49,21 @@ namespace Inlamning_3_ra_kod
             X = Y = Z = T = 0;
             entry = "";
 
-            letter A = new letter("A");
+            Letter A = new Letter("A");
             letterValues.Add(A);
-            letter B = new letter("B");
+            Letter B = new Letter("B");
             letterValues.Add(B);
-            letter C = new letter("C");
+            Letter C = new Letter("C");
             letterValues.Add(C);
-            letter D = new letter("D");
+            Letter D = new Letter("D");
             letterValues.Add(D);
-            letter E = new letter("E");
+            Letter E = new Letter("E");
             letterValues.Add(E);
-            letter F = new letter("F");
+            Letter F = new Letter("F");
             letterValues.Add(F);
-            letter G = new letter("G");
+            Letter G = new Letter("G");
             letterValues.Add(G);
-            letter H = new letter("H");
+            Letter H = new Letter("H");
             letterValues.Add(H);
         }
         /* METHOD: Exit
@@ -306,7 +310,7 @@ namespace Inlamning_3_ra_kod
             }
         }
         /* METHOD: SetVar
-         * PURPOSE: 
+         * PURPOSE: Looks for the same string value and adds the value of X to the list object
          * PARAMETERS: --
          * RETURNS: --
          * FEATURES: NOT YET IMPLEMENTED
@@ -322,14 +326,21 @@ namespace Inlamning_3_ra_kod
             }
         }
         /* METHOD: GetVar
-         * PURPOSE: 
+         * PURPOSE: Move the value from list object to x
          * PARAMETERS: --
          * RETURNS: --
          * FEATURES: NOT YET IMPLEMENTED
          */
         public void GetVar()
         {
-
+            for (int i = 0; i < letterValues.Count(); i++)
+            {
+                if (letterValues[i].letters == selectedLetter)
+                {
+                    RollSetX(letterValues[i].value);
+                    letterValues[i].value = 0;
+                }
+            }
         }
     }
 }
