@@ -88,7 +88,19 @@ namespace Inlamning_3_ra_kod
          */
         public string VarString()
         {
-            return "Insertme";
+            string valuesInList = "";
+            for(int i = 0; i < letterValues.Count(); i++)
+            {
+                if(letterValues[i].value != 0)
+                {
+                    valuesInList += letterValues[i].value.ToString() + "\n";
+                }
+                else
+                {
+                    valuesInList += "\n";
+                }
+            }
+            return $"{valuesInList}";
         }
         /* METHOD: SetX
          * PURPOSE: set X with overwrite
@@ -281,7 +293,6 @@ namespace Inlamning_3_ra_kod
          */
         public void SetAddress(string name)
         {
-            string selectedLetter;
             switch (name)
             {
                 case "A": selectedLetter = name; break;
