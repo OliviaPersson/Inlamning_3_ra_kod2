@@ -21,6 +21,7 @@ namespace Inlamning_3_ra_kod
     {
         public double X, Y, Z, T;
         public string entry;
+        public string selectedLetter;
         /* CONSTRUCTOR: CStack
          * PURPOSE: create a new stack and init X, Y, Z, T and the text entry
          * PARAMETERS: --
@@ -242,14 +243,25 @@ namespace Inlamning_3_ra_kod
             T = Z; Z = Y; Y = X; X = newX;
         }
         /* METHOD: SetAddress
-         * PURPOSE: 
+         * PURPOSE: Store the selected letter in variable
          * PARAMETERS: string name - variable name
          * RETURNS: --
          * FEATURES: NOT YET IMPLEMENTED
          */
         public void SetAddress(string name)
         {
-
+            string selectedLetter;
+            switch (name)
+            {
+                case "A": selectedLetter = name; break;
+                case "B": selectedLetter = name; break;
+                case "C": selectedLetter = name; break;
+                case "D": selectedLetter = name; break;
+                case "E": selectedLetter = name; break;
+                case "F": selectedLetter = name; break;
+                case "G": selectedLetter = name; break;
+                case "H": selectedLetter = name; break;
+            }
         }
         /* METHOD: SetVar
          * PURPOSE: 
