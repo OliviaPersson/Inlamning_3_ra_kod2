@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,9 +38,7 @@ namespace Inlamning_3_ra_kod
         public double X, Y, Z, T;
         public string entry;
         public string selectedLetter;
-
         public List<Letter> letterValues = new List<Letter>();
-
         /* CONSTRUCTOR: CStack
          * PURPOSE: create a new stack and init X, Y, Z, T and the text entry
          * PARAMETERS: --
@@ -65,6 +64,49 @@ namespace Inlamning_3_ra_kod
             letterValues.Add(G);
             Letter H = new Letter("H");
             letterValues.Add(H);
+
+            ReadFile();
+        }
+        /* METHOD: ReadFile
+         * PURPOSE: Reads file if if file exist and updates the variables X, Y, Z, T
+         * PARAMETERS: --
+         * RETURNS: --
+         */
+        private void ReadFile()
+        {
+            if (File.Exists(@"C:\Users\Olivi\molkfreecalc.clc"))
+            {
+                using (StreamReader file = new StreamReader(@"C:\Users\Olivi\molkfreecalc.clc"))
+                {
+                    string line = file.ReadLine();
+                    while (line != null)
+                    {
+                        //string line = file.ReadLine();
+                        string[] words = line.Split('#');
+                        double number = double.Parse(words[1]);
+                        Console.WriteLine(line);
+                        line = file.ReadLine();
+
+                        switch (words[0])
+                        {
+                            case "X":
+                                X = number;
+                                break;
+                            case "Y":
+                                Y = number;
+                                break;
+                            case "Z":
+                                Z = number;
+                                break;
+                            case "T":
+                                T = number;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
         }
         /* METHOD: Exit
          * PURPOSE: called on exit, prepared for saving
@@ -93,9 +135,9 @@ namespace Inlamning_3_ra_kod
         public string VarString()
         {
             string valuesInList = "";
-            for(int i = 0; i < letterValues.Count(); i++)
+            for (int i = 0; i < letterValues.Count(); i++)
             {
-                if(letterValues[i].value != 0)
+                if (letterValues[i].value != 0)
                 {
                     valuesInList += letterValues[i].value.ToString() + "\n";
                 }
@@ -317,9 +359,9 @@ namespace Inlamning_3_ra_kod
          */
         public void SetVar()
         {
-            for(int i = 0; i < letterValues.Count(); i++)
+            for (int i = 0; i < letterValues.Count(); i++)
             {
-                if(letterValues[i].letters == selectedLetter)
+                if (letterValues[i].letters == selectedLetter)
                 {
                     letterValues[i].value = X;
                 }
