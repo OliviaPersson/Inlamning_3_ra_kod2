@@ -48,6 +48,16 @@ namespace Inlamning_3_ra_kod
             X = Y = Z = T = 0;
             entry = "";
 
+            AddLettersToList();
+            ReadFile();
+        }
+        /* METHOD: AddLettersToList
+         * PURPOSE: Creates letter object and adds to list
+         * PARAMETERS: --
+         * RETURNS: --
+         */
+        private void AddLettersToList()
+        {
             Letter A = new Letter("A");
             letterValues.Add(A);
             Letter B = new Letter("B");
@@ -64,8 +74,6 @@ namespace Inlamning_3_ra_kod
             letterValues.Add(G);
             Letter H = new Letter("H");
             letterValues.Add(H);
-
-            ReadFile();
         }
         /* METHOD: ReadFile
          * PURPOSE: Reads file if if file exist and updates the variables X, Y, Z, T
