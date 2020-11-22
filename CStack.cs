@@ -127,7 +127,15 @@ namespace Inlamning_3_ra_kod
         {
             using (StreamWriter writer = new StreamWriter(fileName))
 
-                writer.WriteLine($"X#{X}\nY#{Y}\nZ#{Z}\nT#{T}");
+                writer.WriteLine($"X#{X}\nY#{Y}\nZ#{Z}\nT#{T}" +
+                    $"\nA#{letterValues[0].value}" +
+                    $"\nB#{letterValues[1].value}" +
+                    $"\nC#{letterValues[2].value}" +
+                    $"\nD#{letterValues[3].value}" +
+                    $"\nE#{letterValues[4].value}" +
+                    $"\nF#{letterValues[5].value}" +
+                    $"\nG#{letterValues[6].value}" +
+                    $"\nH#{letterValues[7].value}");
         }
         /* METHOD: StackString
          * PURPOSE: construct a string to write out in a stack view
