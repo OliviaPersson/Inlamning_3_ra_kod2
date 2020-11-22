@@ -77,7 +77,8 @@ namespace Inlamning_3_ra_kod
             letterValues.Add(H);
         }
         /* METHOD: ReadFile
-         * PURPOSE: Reads file if if file exist and updates the variables X, Y, Z, T
+         * PURPOSE: Reads file if if file exist and updates the variables X, Y, Z, T, 
+         * A, B, C, D, E, F, G, H
          * PARAMETERS: --
          * RETURNS: --
          */
@@ -98,27 +99,27 @@ namespace Inlamning_3_ra_kod
 
                         switch (words[0])
                         {
-                            case "X":
-                                X = number;
-                                break;
-                            case "Y":
-                                Y = number;
-                                break;
-                            case "Z":
-                                Z = number;
-                                break;
-                            case "T":
-                                T = number;
-                                break;
-                            default:
-                                break;
+                            case "X": X = number; break;
+                            case "Y": Y = number; break;
+                            case "Z": Z = number; break;
+                            case "T": T = number; break;
+                            case "A": letterValues[0].value = number; break;
+                            case "B": letterValues[1].value = number; break;
+                            case "C": letterValues[2].value = number; break;
+                            case "D": letterValues[3].value = number; break;
+                            case "E": letterValues[4].value = number; break;
+                            case "F": letterValues[5].value = number; break;
+                            case "G": letterValues[6].value = number; break;
+                            case "H": letterValues[7].value = number; break;
+                            default: break;
                         }
                     }
                 }
             }
         }
         /* METHOD: Exit
-         * PURPOSE: called on exit and saves the values in file for variables X, Y, Z, T
+         * PURPOSE: called on exit and saves the values in file for variables X, Y, Z, T,
+         * A, B, C, D, E, F, G, H
          * PARAMETERS: --
          * RETURNS: --
          */
