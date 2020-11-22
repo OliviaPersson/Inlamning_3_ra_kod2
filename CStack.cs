@@ -39,6 +39,7 @@ namespace Inlamning_3_ra_kod
         public string entry;
         public string selectedLetter;
         public List<Letter> letterValues = new List<Letter>();
+        public string fileName = @"C:\Users\Olivi\molkfreecalc.clc";
         /* CONSTRUCTOR: CStack
          * PURPOSE: create a new stack and init X, Y, Z, T and the text entry
          * PARAMETERS: --
@@ -82,9 +83,9 @@ namespace Inlamning_3_ra_kod
          */
         private void ReadFile()
         {
-            if (File.Exists(@"C:\Users\Olivi\molkfreecalc.clc"))
+            if (File.Exists(fileName))
             {
-                using (StreamReader file = new StreamReader(@"C:\Users\Olivi\molkfreecalc.clc"))
+                using (StreamReader file = new StreamReader(fileName))
                 {
                     string line = file.ReadLine();
                     while (line != null)
@@ -117,13 +118,15 @@ namespace Inlamning_3_ra_kod
             }
         }
         /* METHOD: Exit
-         * PURPOSE: called on exit, prepared for saving
+         * PURPOSE: called on exit and saves the values in file for variables X, Y, Z, T
          * PARAMETERS: --
          * RETURNS: --
          */
         public void Exit()
         {
+            using (StreamWriter writer = new StreamWriter(fileName))
 
+                writer.WriteLine($"X#{X}\nY#{Y}\nZ#{Z}\nT#{T}");
         }
         /* METHOD: StackString
          * PURPOSE: construct a string to write out in a stack view
