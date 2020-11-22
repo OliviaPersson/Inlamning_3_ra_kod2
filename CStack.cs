@@ -9,7 +9,7 @@ namespace Inlamning_3_ra_kod
 {
     /* CLASS: Letter
      * PURPOSE: A class Letter with two variables and a constructor to 
-     *   store information about a letter and it´s value
+     * store information about a letter and it´s value
      */
     public class Letter
     {
@@ -20,7 +20,6 @@ namespace Inlamning_3_ra_kod
         {
             this.letters = letters;
         }
-
     }
     /* CLASS: CStack
      * PURPOSE: Is essentially a RPN-calculator with four registers X, Y, Z, T
@@ -150,7 +149,7 @@ namespace Inlamning_3_ra_kod
         /* METHOD: VarString
          * PURPOSE: construct a string to write out in a variable list
          * PARAMETERS: --
-         * RETURNS: NOT YET IMPLEMENTED
+         * RETURNS: string containing values for letters
          */
         public string VarString()
         {
@@ -355,7 +354,7 @@ namespace Inlamning_3_ra_kod
          * PURPOSE: Store the selected letter in variable
          * PARAMETERS: string name - variable name
          * RETURNS: --
-         * FEATURES: NOT YET IMPLEMENTED
+         * FEATURES: --
          */
         public void SetAddress(string name)
         {
@@ -375,7 +374,7 @@ namespace Inlamning_3_ra_kod
          * PURPOSE: Looks for the same string value and adds the value of X to the list object
          * PARAMETERS: --
          * RETURNS: --
-         * FEATURES: NOT YET IMPLEMENTED
+         * FEATURES: --
          */
         public void SetVar()
         {
@@ -391,7 +390,7 @@ namespace Inlamning_3_ra_kod
          * PURPOSE: Move the value from list object to x
          * PARAMETERS: --
          * RETURNS: --
-         * FEATURES: NOT YET IMPLEMENTED
+         * FEATURES: --
          */
         public void GetVar()
         {
